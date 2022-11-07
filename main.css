@@ -1,0 +1,205 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+html{
+    font-size: 62.5%;
+}
+body{
+    overflow-x: hidden;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-col{
+    display: flex;
+   flex-flow: column;
+}
+.container{
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-template-rows: minmax(15vh,min-content) minmax(85vh,min-content);
+    grid-template-areas: "navRow"
+                        "contentRow";
+}
+.navRow{
+    display: grid;
+    grid-area: navRow;
+    grid-template-columns: 20vw 40vw 40vw;
+    grid-template-areas: "icon . searchBar";
+     background-color: aqua;
+}
+.icon{
+    grid-area: icon;
+    background-color: blueviolet;
+}
+.searchBar{
+    grid-area: searchBar;
+    background-color: burlywood;
+}
+.buttonSearch{
+    height: 1rem;
+    width: 4rem;
+    background-color: chocolate;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.searchBar input[type=text] {
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-right: 1rem;
+    height: 3rem;
+    outline: 0;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.contentRow{
+    display: grid;
+    grid-area: contentRow;
+    grid-template-columns: 30vw 70vw;
+    grid-template-areas: "references content";
+    background-color: white;
+}
+.references{
+    grid-area: references;
+    display: block;
+}
+.references ul li{
+    font-size: 2rem;
+    list-style: none;
+}
+
+.leftNavSurahLink:hover{
+    color: royalblue;
+
+}
+a:link{
+    text-decoration: none;
+    color: cornflowerblue;
+}
+
+.content{
+    grid-area: content;
+}
+.content  h1{
+    font-size: 3.5rem;
+    margin-top: 2rem;
+    margin-left: 2%;
+    /* add font family here */
+}
+.content p{
+    font-size: 2rem;
+    margin-top: 1.5rem;
+    margin-left: 2%;
+    margin-right: 5%;
+    /* add font family here */
+
+}
+.content ul li{
+    font-size: 1.8rem;
+    margin-left: 5%;
+    margin-top: 2%;
+    margin-right: 5%;
+}
+
+@media screen and (max-width: 700px) {
+
+.navRow{
+    position: relative;
+    display: grid;
+    grid-area: navRow;
+    grid-template-columns:40vw 40vw 20vw;
+    grid-template-areas: "icon . hamGrid"; 
+}
+.icon{
+    grid-area: icon;
+    grid-template-rows: 50fr 50fr;
+    grid-template-areas: "logo"
+                    "hiddenSearch";
+}
+.logo{
+    grid-area: logo;
+}
+.hiddenSearch{
+    grid-area: hiddenSearch;
+    display: none;
+}
+.searchBar{
+    display: none;
+}
+
+.hiddenSearch input[type=text] {
+    padding: 6px;
+    border: none;
+    margin-right: 0rem;
+    height: 3rem;
+    outline: 0;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+}
+
+
+.ham{
+    position: absolute;
+    height: 5rem;
+    width: 5rem;
+    background-color:royalblue;
+    right: 5%;
+    top: 10%;
+}
+.hamLine{
+    height: 2px;
+    width: 4rem;
+    background-color: saddlebrown;
+}
+.c{
+    margin-top: 0.8rem;
+}
+
+.contentRow{
+    display: grid;
+    grid-area: contentRow;
+    grid-template-columns: 100%;
+    grid-template-rows:minmax(50vh,min-content) minmax(30vh,min-content) minmax(70vh,min-content);
+    grid-template-areas:"hamReferenceRow"
+                       "references" 
+                        "content";
+    background-color: white;
+}
+.hamReferenceRow{
+     grid-area: hamReferenceRow;
+     background-color: silver;
+ }
+.hamReference{
+    height: 8rem;
+    width: 8rem;
+    background-color: seagreen;
+}
+.hamReferenceLine{
+    height: 3px;
+    width: 5rem;
+    background-color: springgreen;
+}
+.b{
+    margin-top: 1rem;
+}
+.references{
+    display: none;
+    margin-left: 30%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.content{
+    background-color: teal;
+}
+
+}
